@@ -36,11 +36,10 @@ Update "Consumer" requests to use the variables stored in the environment:
   ```
 
 ## 3. Workflow Validation
-- Always add a basic test to verify the chain is working:
-  ```javascript
-  tests {
-    test("Variable was captured", () => {
-      expect(bru.getVar("authToken")).to.be.a("string");
-    });
-  }
+- Always add a basic assertion to verify the chain is working:
+  ```yaml
+  runtime:
+    assertions:
+      - expression: bru.getVar("authToken")
+        operator: isString
   ```

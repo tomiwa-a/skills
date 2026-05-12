@@ -8,7 +8,7 @@ Reference for running collections and automating API tests.
 ## 1. Basic Execution
 - **Run Collection**: `bru run --env <name>`
 - **Run Folder**: `bru run <folder-path> --env <name>`
-- **Run Single File**: `bru run <file-path>.bru --env <name>`
+- **Run Single File**: `bru run <file-path>.yml --env <name>`
 
 ## 2. CI/CD Integration (Automated Pipelines)
 To use Bruno in GitHub Actions, GitLab, or Jenkins:
@@ -23,4 +23,4 @@ bru run --env staging --format junit --output results.xml
 
 ## 3. Environment Variables
 - **Overrides**: Use `--env-var key=value` to override environment settings at runtime (e.g., passing a temporary API key).
-- **Secrets**: Mark sensitive variables in `.bru` environment files as `secret` to ensure they are never committed to Git.
+- **Secrets**: Mark sensitive variables in `.yml` environment files as `secret` to ensure they are never committed to Git.

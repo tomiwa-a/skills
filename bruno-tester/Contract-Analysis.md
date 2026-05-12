@@ -50,19 +50,19 @@ Organize the Bruno collection to mirror the project's API resource structure:
 ```
 collection/
 ├── environments/
-│   ├── local.bru
-│   └── staging.bru
+│   ├── local.yml
+│   └── staging.yml
 ├── [resource-1]/
 │   ├── folder.yml
-│   ├── [happy-path].bru
-│   ├── [validation-error].bru
-│   └── [auth-error].bru
+│   ├── [happy-path].yml
+│   ├── [validation-error].yml
+│   └── [auth-error].yml
 ├── [resource-2]/
 │   ├── folder.yml
 │   └── ...
 └── [async-resource]/
     ├── folder.yml
-    └── [202-accepted].bru
+    └── [202-accepted].yml
 ```
 
 The folder names must match the API resource groups defined in the project's `plan/tasks/` files.

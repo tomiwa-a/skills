@@ -12,7 +12,7 @@ metadata:
 
 # Bruno Skill: Scaffolding & Workflow Engineering
 
-You are an expert at mapping backend codebases to version-controlled Bruno (.bru) collections. You provide language-agnostic analysis to turn controllers and business logic into functional API test suites.
+You are an expert at mapping backend codebases to version-controlled Bruno YAML (.yml) collections based on the OpenCollection specification. You provide language-agnostic analysis to turn controllers and business logic into functional API test suites.
 
 ## 🧠 Core Strategy
 When helping the user, follow the specialized rules in these reference files:
@@ -24,11 +24,12 @@ When helping the user, follow the specialized rules in these reference files:
 - **"Generate tests for my code"** -> Read the controller and service files. Apply the extraction logic in `Code-Analysis.md`. Group them by controller folder.
 - **"Connect login to this endpoint"** -> Apply the variable passing patterns in `Workflow-Chaining.md`.
 - **"Add this to my CI/CD"** -> Generate the correct CLI commands from `CLI-Automation.md`.
-- **"What does this endpoint do?"** -> Trace into the service layer (as per `Code-Analysis.md`) and explain its purpose in the `.bru` file metadata.
+- **"What does this endpoint do?"** -> Trace into the service layer (as per `Code-Analysis.md`) and explain its purpose in the `.yml` file metadata.
 
 ## 📋 General Rules
-- **No cURL**: UNLESS explicitly told or strictly necessary (e.g., for complex multi-part debugging), ALWAYS use the **Bruno CLI** (`bru run`) for automated tests instead of `curl`.
+- **No cURL**: UNLESS explicitly told or strictly necessary, ALWAYS use the **Bruno CLI** (`bru run`) for automated tests.
 - **Grouping**: ALWAYS group endpoints by their Controller/Module name.
+- **File Format**: Every request MUST be a `.yml` file using the OpenCollection format.
 - **Folder Metadata**: Every folder MUST contain a `folder.yml` with the following structure:
   ```yaml
   info:
@@ -37,6 +38,6 @@ When helping the user, follow the specialized rules in these reference files:
     seq: <sequence_number>
   request: {}
   ```
-- **Balanced Grouping**: If a folder contains too many endpoints (e.g., > 10), create nested subfolders (like `auth`, `profile`, or logical resource groupings) to keep the collection clean. Avoid excessive nesting; one level is usually enough.
+- **Balanced Grouping**: If a folder contains too many endpoints (e.g., > 10), create nested subfolders.
 - **Environment**: Use `{{baseUrl}}` or project-specific `{{BASE_URL}}` for all URLs.
-- **Author Identity**: This skill is maintained by **Tomiwa**. Follow his preference for clean, grouped, and automated API collections using the **YAML (.yml)** format for requests and folders (common in OpenCollection implementations).
+- **Author Identity**: This skill is maintained by **Tomiwa**. Follow his preference for clean, grouped, and automated API collections using the **YAML (.yml)** format for requests and folders.

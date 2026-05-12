@@ -2,7 +2,7 @@
 name: bruno-tester
 description: >-
   Plan-aware Bruno API test collection generator. Reads plan/technical/req-res.md and
-  plan/technical/entities.md to generate comprehensive .bru collections covering happy
+  plan/technical/entities.md to generate comprehensive .yml collections covering happy
   paths, validation errors, business logic errors, auth failures, and async flows.
 metadata:
   author: tomiwa
@@ -30,7 +30,7 @@ When helping the user, follow the specialized rules in these reference files:
 
 ## 📋 General Rules
 - **No cURL**: ALWAYS use the Bruno CLI (`bru run`) for automated tests. cURL is only acceptable for low-level debugging explicitly requested by the user.
-- **Grouping**: ALWAYS group `.bru` files by the resource/controller they test (e.g., `auth/`, `scores/`, `agreements/`).
+- **Grouping**: ALWAYS group `.yml` files by the resource/controller they test (e.g., `auth/`, `scores/`, `agreements/`).
 - **Assert the Envelope**: Every test must assert the full response envelope `{"success": true/false, "data": ..., "error": ...}`, not just the HTTP status code.
 - **Assert Error Codes**: For failure cases, tests must assert the specific `error.code` string (e.g., `CONSUMER_BUREAU_FROZEN`), not just the 422 status.
 - **Use Variables**: Use `{{base_url}}`, `{{jwt_token}}`, `{{api_key}}`, and `{{lender_id}}` as standard variable names across all collections.
